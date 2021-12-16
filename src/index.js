@@ -3,15 +3,17 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './css/index.css';
 import './css/tailwind.css';
-import { HomePage, ShopPage } from './Components/Home/App';
+import { HomePage } from './Components/Home/Home';
+import { ShopPage } from './Components/Shop/Shop';
 import reportWebVitals from './reportWebVitals';
-import $ from 'jquery';
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+//import $ from 'jquery';
+//import { initializeApp } from "firebase/app";
+//import { getAnalytics } from "firebase/analytics";
 
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+/*
 const firebaseConfig = {
   apiKey: "AIzaSyDlA9Oau1ip5iHUtgltp4q5-MmLeRgYF6Y",
   authDomain: "tenet-9c5b2.firebaseapp.com",
@@ -25,6 +27,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 //const analytics = getAnalytics(app);
+*/
 
 
 ReactDOM.render(
@@ -37,32 +40,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-$(window).on("load",function() {
-  $(".fade").css("opacity", '0');
-  console.log("Caine");
-  $(".fade").css("padding-top", '2em');
-  $(window).scroll(function() {
-    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
-    $(".fade").each(function() {
-      // Check the location of each desired element
-      var objectBottom;
-      if($(this).is("img")){
-        objectBottom = $(this).offset().top + $(this).outerHeight()/4;
-      }else{
-        objectBottom = $(this).offset().top + $(this).outerHeight();
-      }
-
-      // If the element is completely within bounds of the window, fade it in
-      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
-        if ($(this).css("opacity") == 0) {
-          $(this).animate({ paddingTop: '0px', opacity: 1}, 400);
-        }
-      } /*else { //object goes out of view (scrolling up)
-        if ($(this).css("opacity")==1) {$(this).fadeTo(400,0);}
-      }*/
-    });
-  }).scroll(); //invoke scroll-handler on page-load
-});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

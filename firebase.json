@@ -13,7 +13,7 @@
   },
   "hosting": {
     "site": "tenet-skateboard",
-    "public": "public",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
