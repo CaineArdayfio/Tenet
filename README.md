@@ -1,3 +1,7 @@
+# Tenet — the skateboard website
+
+This is a website I designed and built for a startup I worked on called Tenet. The website can be found here: tenet-skateboard.web.app.
+
 ### To Deploy Website
 Change firebase.json as follows:
 "hosting": {    
